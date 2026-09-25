@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="hi" data-theme="dark" data-meeting="off">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Niyam Partner Playbook</title>
+<meta name="description" content="Internal playbook for the Niyam partner team: fees, terminology, commission and affiliate Q&A with live calculators.">
+<link rel="icon" href="assets/img/niyam-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>
+  // Apply saved preferences before paint.
+  (function(){try{var d=document.documentElement,s=localStorage;
+    var l=s.getItem('pb-lang'),t=s.getItem('pb-theme');
+    if(l)d.dataset.lang=l;
+    if(t)d.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)d.dataset.theme='light';
+  }catch(e){}})();
+</script>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Niyam Partner Playbook, back to top">
+    <img src="assets/img/niyam-logo.png" alt="Niyam">
+    <span class="rule" aria-hidden="true"></span>
+    <span class="tag">Partner Playbook</span>
+  </a>
+  <div class="search" role="search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="Search the playbook" aria-controls="results">
+    <kbd>/</kbd>
+    <div class="results" id="results" role="listbox" hidden></div>
+  </div>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Language">
+      <button type="button" data-setlang="hi">Hinglish</button>
+      <button type="button" data-setlang="en">English</button>
+    </div>
+    <button class="iconbtn" type="button" id="meetingBtn" aria-pressed="false" title="Hide internal notes before showing the screen to an affiliate">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+      <span class="lbl">Meeting mode</span>
+    </button>
+    <button class="iconbtn" type="button" id="themeBtn" aria-label="Toggle light or dark theme">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+<div class="ribbon" role="status">
+  <span class="hi">Meeting mode ON — internal notes, Niyam margins aur deal desk chhupe hue hain. Screen share karna safe hai.</span>
+  <span class="en">Meeting mode is on. Internal notes, Niyam margins and the deal desk are hidden, so the screen is safe to share.</span>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-in">
+    <p class="kicker">Internal · Partner team playbook · <span data-r="updated"></span></p>
+    <h1><span class="hi">Affiliate ka har sawaal. Ek jagah jawab<span class="dot">.</span></span><span class="en">Every affiliate question. One place<span class="dot">.</span></span></h1>
+    <p class="lede hi">Fees, terminology, commission aur objection handling — simple Hinglish mein, live calculators ke saath. Meeting mein upar search karo (<b style="color:#fff">/</b> dabao), ya <b style="color:#fff">Meeting mode</b> on karke screen affiliate ko dikhao.</p>
+    <p class="lede en">Fees, terminology, commission and objection handling in plain language, with live calculators. During a meeting, search from the top bar (press <b style="color:#fff">/</b>) or turn on <b style="color:#fff">Meeting mode</b> before showing the screen to the affiliate.</p>
+    <div class="hero-stats">
+      <div><span class="v" data-r="futMaker"></span><span class="k"><span class="hi">Futures maker fee</span><span class="en">Futures maker fee</span></span></div>
+      <div><span class="v" data-r="futTaker"></span><span class="k"><span class="hi">Futures taker fee</span><span class="en">Futures taker fee</span></span></div>
+      <div><span class="v" data-r="share"></span><span class="k"><span class="hi">Partner share, lifetime</span><span class="en">Partner share, lifetime</span></span></div>
+      <div><span class="v">₹0</span><span class="k"><span class="hi">Deposit &amp; withdrawal fee</span><span class="en">Deposit &amp; withdrawal fee</span></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+<!-- ============ TOC ============ -->
+<nav class="toc" aria-label="Sections">
+  <ol id="tocList">
+    <li><a href="#cheatsheet"><span class="n">00</span><span class="hi">Rate card</span><span class="en">Rate card</span></a></li>
+    <li><a href="#basics"><span class="n">01</span><span class="hi">Basics: futures</span><span class="en">Futures basics</span></a></li>
+    <li><a href="#makertaker"><span class="n">02</span>Maker vs Taker</a></li>
+    <li><a href="#futures"><span class="n">03</span><span class="hi">Futures fees + GST</span><span class="en">Futures fees + GST</span></a></li>
+    <li><a href="#options"><span class="n">04</span><span class="hi">Options fees</span><span class="en">Options fees</span></a></li>
+    <li><a href="#funding"><span class="n">05</span>Funding</a></li>
+    <li><a href="#liquidation"><span class="n">06</span>Liquidation</a></li>
+    <li><a href="#wallet"><span class="n">07</span><span class="hi">Deposit, withdrawal, KYC</span><span class="en">Deposits, withdrawals, KYC</span></a></li>
+    <li><a href="#commission"><span class="n">08</span><span class="hi">Partner commission</span><span class="en">Partner commission</span></a></li>
+    <li><a href="#earnings"><span class="n">09</span><span class="hi">Earnings calculator</span><span class="en">Earnings calculator</span></a></li>
+    <li class="internal"><a href="#dealdesk"><span class="n">10</span>Deal desk</a></li>
+    <li><a href="#faq"><span class="n">11</span><span class="hi">Affiliate FAQ</span><span class="en">Affiliate FAQ</span></a></li>
+    <li><a href="#meeting"><span class="n">12</span><span class="hi">Meeting playbook</span><span class="en">Meeting playbook</span></a></li>
+    <li><a href="#glossary"><span class="n">13</span><span class="hi">Glossary A–Z</span><span class="en">Glossary A–Z</span></a></li>
+    <li class="internal"><a href="#open"><span class="n">14</span><span class="hi">Open items</span><span class="en">Open items</span></a></li>
+  </ol>
+  <div class="tocfoot internal">
+    <span class="hi"><b>TBC</b> badge = abhi confirm nahi hua. Affiliate ko final bol ke mat batao.</span>
+    <span class="en"><b>TBC</b> badge = not confirmed yet. Don't present it to an affiliate as final.</span>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ 00 CHEAT SHEET ============ -->
+<section class="sec" id="cheatsheet">
+  <div class="sec-hd">
+    <div class="eyebrow">00 · <span class="hi">Ek nazar mein</span><span class="en">At a glance</span></div>
+    <h2><span class="hi">Rate card</span><span class="en">Rate card</span></h2>
+    <p class="lead hi">Meeting se pehle yeh ek screen dekh lo. Saare rates fees ke hain, GST alag se lagta hai.</p>
+    <p class="lead en">Look at this one screen before any meeting. All rates are fees only; GST is charged on top.</p>
+  </div>
+
+  <div class="grid4">
+    <div class="tile"><span class="k">Futures · Maker</span><span class="v" data-r="futMaker"></span><span class="d hi">INR aur USDT market dono</span><span class="d en">Both INR and USDT markets</span></div>
+    <div class="tile"><span class="k">Futures · Taker</span><span class="v" data-r="futTaker"></span><span class="d hi">INR aur USDT market dono</span><span class="d en">Both INR and USDT markets</span></div>
+    <div class="tile"><span class="k">Options · Maker</span><span class="v" data-r="optMaker"></span><span class="d hi">Cap: premium ka <span data-r="optCap"></span></span><span class="d en">Capped at <span data-r="optCap"></span> of premium</span></div>
+    <div class="tile"><span class="k">Options · Taker</span><span class="v" data-r="optTaker"></span><span class="d hi">Cap: premium ka <span data-r="optCap"></span></span><span class="d en">Capped at <span data-r="optCap"></span> of premium</span></div>
+    <div class="tile"><span class="k">Options · Delivery</span><span class="v" data-r="optDelivery"></span><span class="d hi">Sirf ITM expiry pe · cap <span data-r="optDeliveryCap"></span> · daily expiry pe nahi</span><span class="d en">ITM expiry only · cap <span data-r="optDeliveryCap"></span> · none on daily expiry</span></div>
+    <div class="tile"><span class="k">Options · Liquidation</span><span class="v" data-r="optLiq"></span><span class="d hi">Sirf sellers pe. Buyers kabhi liquidate nahi hote.</span><span class="d en">Sellers only. Buyers are never liquidated.</span></div>
+    <div class="tile"><span class="k">GST</span><span class="v" data-r="gst"></span><span class="d hi">Har fee pe alag se. Funding pe nahi.</span><span class="d en">On each fee separately. Not on funding.</span></div>
+    <div class="tile"><span class="k">Funding</span><span class="v">₹0</span><span class="d hi">Niyam ki kamai zero. Trader se trader ko jaata hai.</span><span class="d en">Niyam earns nothing. It flows trader to trader.</span></div>
+    <div class="tile"><span class="k">INR deposit</span><span class="v">Free</span><span class="d">UPI · IMPS · NEFT</span></div>
+    <div class="tile"><span class="k">INR withdrawal</span><span class="v">Free</span><span class="d hi">Zyaadatar 30 min ke andar</span><span class="d en">Most within 30 minutes</span></div>
+    <div class="tile"><span class="k"><span class="hi">Min deposit</span><span class="en">Min deposit</span><span class="tbc internal" title="Site says Rs 100 in one place and 'No minimum deposit' in the footer">TBC</span></span><span class="v" data-r="minDep"></span><span class="d hi">KYC: Aadhaar + PAN (DigiLocker)</span><span class="d en">KYC: Aadhaar + PAN (DigiLocker)</span></div>
+    <div class="tile"><span class="k">Max leverage</span><span class="v" data-r="maxLev"></span><span class="d hi">Futures &amp; perpetuals</span><span class="d en">Futures &amp; perpetuals</span></div>
+    <div class="tile hl"><span class="k">Partner share</span><span class="v" data-r="share"></span><span class="d hi">Trading fees ka, lifetime. Dashboard daily, payout monthly.</span><span class="d en">Of trading fees, for life. Dashboard daily, paid monthly.</span></div>
+    <div class="tile"><span class="k"><span class="hi">Trader discount</span><span class="en">Trader discount</span><span class="tbc" title="Site shows 10% (refer page) and 30% for 2 months (homepage)">TBC</span></span><span class="v" data-r="disc"></span><span class="d hi">Partner code se aaye users ke liye</span><span class="d en">For users who join with a partner code</span></div>
+    <div class="tile internal"><span class="k">Share ceiling</span><span class="v" data-r="shareMax"></span><span class="d hi">Sirf approval ke saath. Meeting mein promise nahi.</span><span class="d en">Only with approval. Never promise it in the room.</span></div>
+    <div class="tile"><span class="k">FIU-IND REID</span><span class="v" style="font-size:19px" data-r="fiuReid"></span><span class="d">Lightningnodes Technologies Pvt Ltd</span></div>
+  </div>
+
+  <div class="subsec">
+    <h3><span class="hi">30-second pitch</span><span class="en">The 30-second pitch</span></h3>
+    <div class="say">
+      <span class="who"><span class="hi">Bolo</span><span class="en">Say</span></span>
+      <p class="hi">"Niyam India ka FIU-registered, INR-settled crypto derivatives exchange hai — web, iOS aur Android pe live. Aapke users sirf INR mein deposit aur withdraw karte hain, UPI, IMPS ya NEFT se, bilkul free. Aapke code se jo bhi user aata hai, uski trading fees ka <span data-r="share"></span> aapko lifetime milta hai — dashboard pe daily dikhta hai, monthly pay hota hai. Koi listing fee nahi, koi minimum nahi, koi tech integration nahi, ek hafte mein live. Aur aapki community ke liye co-branded webinars aur ek dedicated RM team."</p>
+      <p class="en">"Niyam is an FIU-registered, INR-settled crypto derivatives exchange, live today on web, iOS and Android. Your users deposit and withdraw only in INR, over UPI, IMPS or NEFT, completely free. Every user who joins with your code earns you <span data-r="share"></span> of their trading fees for life. You see it on a dashboard daily and get paid monthly. No listing fee, no minimums, no tech integration, and you can be live within a week. Your community also gets co-branded webinars and a dedicated RM team."</p>
+    </div>
+  </div>
+
+  <div class="subsec">
+    <h3><span class="hi">5 baatein jo har meeting mein yaad rakhni hain</span><span class="en">5 things to remember in every meeting</span></h3>
+    <ol class="prose">
+      <li class="hi"><b>Fee notional pe lagti hai, margin pe nahi.</b> ₹10,000 margin × 10x = ₹1,00,000 notional. Fee ₹1,00,000 pe lagegi.</li>
+      <li class="en"><b>Fees are charged on notional, not margin.</b> ₹10,000 margin × 10x = ₹1,00,000 notional, and the fee is on ₹1,00,000.</li>
+      <li class="hi"><b>Maker sasta, taker mehenga.</b> Buy ya sell se fark nahi padta — order kaise lagaya, us se padta hai. GST upar se.</li>
+      <li class="en"><b>Maker is cheaper than taker.</b> Buy or sell doesn't matter; how the order was placed does. GST is on top.</li>
+      <li class="hi"><b>Funding Niyam ki kamai nahi hai.</b> Isliye us pe na GST, na partner commission.</li>
+      <li class="en"><b>Funding is not Niyam revenue.</b> So there is no GST and no partner commission on it.</li>
+      <li class="hi"><b>Commission sirf trading fees pe.</b> User ke profit ya loss pe kabhi nahi.</li>
+      <li class="en"><b>Commission is on trading fees only.</b> Never on a user's profit or loss.</li>
+      <li class="hi"><b>Kabhi promise mat karo:</b> returns, tax saving, ya <span data-r="share"></span> se zyada share. "Main team se confirm karke bataunga" bolna bilkul theek hai.</li>
+      <li class="en"><b>Never promise</b> returns, tax savings, or a share above <span data-r="share"></span>. "Let me confirm with the team" is always a fine answer.</li>
+    </ol>
+    <div class="actions">
+      <button class="btn" type="button" id="printCheat">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+        <span class="hi">Rate card print karo</span><span class="en">Print rate card</span>
+      </button>
+      <button class="btn ghost" type="button" id="printAll"><span class="hi">Poori playbook print / PDF</span><span class="en">Print full playbook / PDF</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 BASICS ============ -->
+<section class="sec" id="basics">
+  <div class="sec-hd">
+    <div class="eyebrow">01 · <span class="hi">Shuruaat yahan se</span><span class="en">Start here</span></div>
+    <h2><span class="hi">Crypto futures, 5 minute mein</span><span class="en">Crypto futures in 5 minutes</span></h2>
+    <p class="lead hi">Affiliate ke 80% sawaal in 6 shabdon se aate hain: spot, futures, long/short, margin, leverage, notional. Yeh samajh gaye toh baaki sab aasaan hai.</p>
+    <p class="lead en">About 80% of affiliate questions come back to six words: spot, futures, long/short, margin, leverage, notional. Once these click, everything else is easy.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card card-pad">
+      <h4><span class="hi">Spot vs Futures</span><span class="en">Spot vs Futures</span></h4>
+      <p class="hi" style="margin-top:8px"><b>Spot</b> = asli coin khareedna, jaise dukaan se sona khareedna. <b>Futures</b> = coin ke price pe ek contract. Coin haath mein nahi aata, sirf price ke upar-neeche hone ka profit ya loss INR mein settle hota hai. Niyam pe sab kuch futures/options hai, INR mein settle hota hai.</p>
+      <p class="en" style="margin-top:8px"><b>Spot</b> means buying the actual coin, like buying gold from a shop. <b>Futures</b> are a contract on the coin's price. You never hold the coin; only the profit or loss from the price move settles, in INR. Everything on Niyam is futures or options, settled in INR.</p>
+    </div>
+    <div class="card card-pad">
+      <h4>Long &amp; Short</h4>
+      <p class="hi" style="margin-top:8px"><b>Long</b> = "price badhega" wala trade. <b>Short</b> = "price girega" wala trade. Futures mein dono equally aasaan hain, isliye girte market mein bhi trading hoti hai.</p>
+      <p class="en" style="margin-top:8px"><b>Long</b> is a bet that the price will rise. <b>Short</b> is a bet that it will fall. In futures both are equally easy, which is why people trade in falling markets too.</p>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Margin &amp; Leverage</span><span class="en">Margin &amp; Leverage</span></h4>
+      <p class="hi" style="margin-top:8px">Jaise ₹10 lakh ka flat ₹1 lakh down payment pe. Down payment = <b>margin</b>. 10 lakh ÷ 1 lakh = <b>10x leverage</b>. Niyam pe max <span data-r="maxLev"></span>. Leverage profit aur loss dono ko badhata hai.</p>
+      <p class="en" style="margin-top:8px">Like buying a ₹10 lakh flat with a ₹1 lakh down payment. The down payment is the <b>margin</b>; 10 lakh ÷ 1 lakh = <b>10x leverage</b>. Niyam allows up to <span data-r="maxLev"></span>. Leverage magnifies both profit and loss.</p>
+    </div>
+    <div class="card card-pad">
+      <h4>Notional</h4>
+      <p class="hi" style="margin-top:8px">Position ka <b>poora size</b>. ₹10,000 margin × 10x = ₹1,00,000 notional. <b>Saari fees notional pe lagti hain</b>, isliye yeh shabd sabse important hai.</p>
+      <p class="en" style="margin-top:8px">The <b>full size</b> of the position. ₹10,000 margin × 10x = ₹1,00,000 notional. <b>Every fee is charged on notional</b>, which makes this the most important word here.</p>
+    </div>
+    <div class="card card-pad">
+      <h4>Perpetual</h4>
+      <p class="hi" style="margin-top:8px">Aisa futures jiski <b>koi expiry nahi</b>. Jab tak chaho hold karo. Price ko spot ke paas rakhne ke liye har 4 ya 8 ghante <a href="#funding">funding</a> hoti hai.</p>
+      <p class="en" style="margin-top:8px">A future with <b>no expiry date</b>; hold it as long as you like. <a href="#funding">Funding</a> every 4 or 8 hours keeps its price close to spot.</p>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">INR market vs USDT market</span><span class="en">INR market vs USDT market</span></h4>
+      <p class="hi" style="margin-top:8px">INR market (BTC-INR) mein price rupees mein, USDT market (BTC-USDT) mein dollar-stablecoin mein dikhta hai. <b>Fees dono mein same</b> hain. Deposit/withdraw hamesha INR mein.</p>
+      <p class="en" style="margin-top:8px">The INR market (BTC-INR) quotes prices in rupees; the USDT market (BTC-USDT) quotes in a dollar stablecoin. <b>Fees are the same in both.</b> Deposits and withdrawals are always in INR.</p>
+    </div>
+  </div>
+
+  <div class="analogy">
+    <div class="ic">bp</div>
+    <div>
+      <p class="hi"><b>Basis point (bps)</b> = 0.01%. Toh <span data-r="futTaker"></span> = 5 bps, <span data-r="futMaker"></span> = 2 bps. Internal calculations aur partner deals mein "bps" sunoge, affiliate se % mein hi baat karo.</p>
+      <p class="en"><b>Basis point (bps)</b> = 0.01%. So <span data-r="futTaker"></span> = 5 bps and <span data-r="futMaker"></span> = 2 bps. You'll hear "bps" internally and in partner deals; with affiliates, talk in %.</p>
+    </div>
+  </div>
+
+  <div class="calc" id="calc-pb">
+    <div class="calc-hd"><h4><span class="hi">Position builder</span><span class="en">Position builder</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><label for="pb_m"><span class="hi">Margin (trader ka paisa)</span><span class="en">Margin (trader's money)</span></label>
+          <div class="in"><span class="ax">₹</span><input id="pb_m" type="number" value="10000" min="0" step="1000"></div></div>
+        <div class="f"><label for="pb_l">Leverage <output id="pb_lo"></output></label>
+          <input id="pb_l" type="range" min="1" max="25" step="1" value="10">
+          <div class="rangeticks"><span>1x</span><span>5x</span><span>10x</span><span>15x</span><span>20x</span><span>25x</span></div></div>
+        <div class="f"><label for="pb_mv"><span class="hi">Price kitna move hua</span><span class="en">Price move</span> <output id="pb_mvo"></output></label>
+          <input id="pb_mv" type="range" min="-20" max="20" step="0.5" value="2">
+          <div class="rangeticks"><span>−20%</span><span>0</span><span>+20%</span></div></div>
+        <div class="f"><div class="lbl"><span class="hi">Direction</span><span class="en">Direction</span></div>
+          <div class="tog" data-tog="pb_side"><button type="button" data-v="long" aria-pressed="true">Long</button><button type="button" data-v="short" aria-pressed="false">Short</button></div></div>
+      </div>
+      <div class="calc-out" id="pb_out" aria-live="polite"></div>
+    </div>
+  </div>
+  <div class="warn"><span class="ic">!</span><div>
+    <span class="hi">Risk honestly batao: 10x pe price sirf ~10% ulta gaya toh poora margin khatam ho sakta hai (maintenance margin ki wajah se liquidation thoda pehle hota hai). Stop-loss aur margin alerts available hain. Kabhi "risk-free" ya "guaranteed" mat bolo.</span>
+    <span class="en">Be honest about risk: at 10x, a move of only ~10% against the trader can wipe out the whole margin (liquidation happens slightly earlier because of maintenance margin). Stop-loss and margin alerts are available. Never say "risk-free" or "guaranteed".</span>
+  </div></div>
+</section>
+
+<!-- ============ 02 MAKER / TAKER ============ -->
+<section class="sec" id="makertaker">
+  <div class="sec-hd">
+    <div class="eyebrow">02 · <span class="hi">Sabse zyada poocha jaane wala</span><span class="en">Most asked</span></div>
+    <h2>Maker vs Taker</h2>
+    <p class="lead hi">Fee kitni lagegi, yeh buy/sell se nahi, <b>order kaise lagaya</b> us se decide hota hai.</p>
+    <p class="lead en">Which fee applies depends on <b>how the order was placed</b>, not on whether it's a buy or a sell.</p>
+  </div>
+
+  <div class="analogy">
+    <div class="ic">?</div>
+    <div>
+      <p class="hi"><b>Order book ko ek dukaan ki shelf samjho.</b> <b>Maker</b> woh hai jo shelf pe maal <i>rakhta</i> hai — uska limit order turant match nahi hota, book mein wait karta hai. Wo market ko liquidity de raha hai, isliye fee kam: <b data-r="futMaker"></b>. <b>Taker</b> woh hai jo shelf se maal <i>utha leta</i> hai — market order, ya aisa limit order jo turant match ho gaya. Wo liquidity le raha hai, isliye fee zyada: <b data-r="futTaker"></b>.</p>
+      <p class="en"><b>Think of the order book as a shop shelf.</b> A <b>maker</b> <i>puts</i> goods on the shelf: their limit order doesn't match right away and waits in the book. They add liquidity, so they pay less: <b data-r="futMaker"></b>. A <b>taker</b> <i>takes</i> goods off the shelf with a market order, or a limit order that matches instantly. They remove liquidity, so they pay more: <b data-r="futTaker"></b>.</p>
+    </div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="t">
+      <thead><tr><th><span class="hi">Order ka type</span><span class="en">Order type</span></th><th><span class="hi">Kya hota hai</span><span class="en">What happens</span></th><th>Fee</th></tr></thead>
+      <tbody>
+        <tr><td><b>Market order</b></td><td><span class="hi">Jo bhi best price hai, turant fill</span><span class="en">Fills instantly at the best available price</span></td><td><b>Taker</b> · <span data-r="futTaker"></span></td></tr>
+        <tr><td><b>Limit order</b> <span class="hi">(book mein wait)</span><span class="en">(rests in the book)</span></td><td><span class="hi">Current price se door lagaya, baad mein fill hua</span><span class="en">Placed away from the market, filled later</span></td><td><b>Maker</b> · <span data-r="futMaker"></span></td></tr>
+        <tr><td><b>Limit order</b> <span class="hi">(turant match)</span><span class="en">(matches instantly)</span></td><td><span class="hi">Price aisi rakhi ki turant match ho gaya</span><span class="en">Priced so it matched immediately</span></td><td><b>Taker</b> · <span data-r="futTaker"></span></td></tr>
+        <tr><td><b>Stop-loss (stop-market)</b></td><td><span class="hi">Trigger hone pe market order ban jaata hai</span><span class="en">Becomes a market order when triggered</span></td><td><b>Taker</b></td></tr>
+        <tr><td><b>Liquidation</b></td><td><span class="hi">Risk engine position band karta hai</span><span class="en">The risk engine closes the position</span></td><td><b>Taker</b> + <a href="#liquidation">clearance fee</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warn"><span class="ic">!</span><div>
+    <span class="hi"><b>Common galti:</b> "Buy pe maker, sell pe taker" — galat. Short sell bhi maker ho sakta hai agar order book mein wait kare. Aur limit order bhi taker ban jaata hai agar turant match ho jaye.</span>
+    <span class="en"><b>Common mistake:</b> "buy is maker, sell is taker" is wrong. A short sell can be maker if it waits in the book, and a limit order becomes taker if it matches instantly.</span>
+  </div></div>
+
+  <div class="subsec">
+    <h3><span class="hi">Quick quiz — team training ke liye</span><span class="en">Quick quiz for team training</span></h3>
+    <div class="quiz" id="quiz"></div>
+  </div>
+</section>
+
+<!-- ============ 03 FUTURES FEES ============ -->
+<section class="sec" id="futures">
+  <div class="sec-hd">
+    <div class="eyebrow">03 · Futures &amp; Perpetuals</div>
+    <h2><span class="hi">Futures fees + GST</span><span class="en">Futures fees + GST</span></h2>
+    <p class="lead hi">Formula ek hi hai: <b>Fee = Notional × rate</b>, phir us fee pe <b data-r="gst"></b> GST. Entry aur exit dono pe alag-alag lagti hai.</p>
+    <p class="lead en">One formula: <b>Fee = Notional × rate</b>, then <b data-r="gst"></b> GST on that fee. It is charged separately on entry and on exit.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="t">
+      <thead><tr><th>Market</th><th><span class="hi">Kaun</span><span class="en">Who</span></th><th class="num">Maker</th><th class="num">Taker</th><th class="num">GST</th></tr></thead>
+      <tbody>
+        <tr><td><b>INR market</b> <span class="d">BTC-INR, ETH-INR…</span></td><td><span class="hi">Sab traders, sab volumes</span><span class="en">All traders, all volumes</span></td><td class="num" data-r="futMaker"></td><td class="num" data-r="futTaker"></td><td class="num">+<span data-r="gst"></span></td></tr>
+        <tr><td><b>USDT market</b> <span class="d">BTC-USDT…</span></td><td><span class="hi">Sab traders, sab volumes</span><span class="en">All traders, all volumes</span></td><td class="num" data-r="futMaker"></td><td class="num" data-r="futTaker"></td><td class="num">+<span data-r="gst"></span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note hi">Abhi koi VIP / volume tier nahi hai — sab ke liye same rate.</p>
+  <p class="note en">There are no VIP or volume tiers today; everyone pays the same rate.</p>
+
+  <div class="grid2" style="margin-top:18px">
+    <div class="card card-pad">
+      <h4><span class="hi">Example: ₹1,00,000 ka trade, dono side taker</span><span class="en">Example: ₹1,00,000 trade, taker both sides</span></h4>
+      <div class="o"><span class="l">Entry fee</span><span class="v" data-x="tk1L"></span></div>
+      <div class="o"><span class="l">GST</span><span class="v" data-x="tk1Lg"></span></div>
+      <div class="o"><span class="l">Exit fee + GST</span><span class="v" data-x="tk1Lt"></span></div>
+      <div class="o big"><span class="l">Round trip</span><span class="v" data-x="rtTk"></span></div>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Same trade, dono side maker</span><span class="en">Same trade, maker both sides</span></h4>
+      <div class="o"><span class="l">Entry fee</span><span class="v" data-x="mk1L"></span></div>
+      <div class="o"><span class="l">GST</span><span class="v" data-x="mk1Lg"></span></div>
+      <div class="o"><span class="l">Exit fee + GST</span><span class="v" data-x="mk1Lt"></span></div>
+      <div class="o big"><span class="l">Round trip</span><span class="v" data-x="rtMk"></span></div>
+    </div>
+  </div>
+
+  <div class="say">
+    <span class="who"><span class="hi">Affiliate: "₹10,000 lagaye, fee ₹118 kyun?"</span><span class="en">Affiliate: "I put in ₹10,000, why ₹118 in fees?"</span></span>
+    <p class="hi">"Kyunki 10x leverage pe aapka position ₹1,00,000 ka hai, aur fee position ke size pe lagti hai, margin pe nahi. Price ko sirf <span data-x="rtTkPctG"></span> move karna hai aur fees cover ho jaati hai. Limit orders use karo toh fees 60% kam."</p>
+    <p class="en">"At 10x leverage your position is ₹1,00,000, and fees are charged on position size, not margin. The price only needs to move <span data-x="rtTkPctG"></span> to cover them. Use limit orders and fees drop by 60%."</p>
+  </div>
+
+  <div class="calc" id="calc-fc">
+    <div class="calc-hd"><h4><span class="hi">Futures fee calculator</span><span class="en">Futures fee calculator</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><div class="lbl"><span class="hi">Size kaise daalna hai</span><span class="en">Enter size as</span></div>
+          <div class="tog" data-tog="fc_mode"><button type="button" data-v="margin" aria-pressed="true">Margin × leverage</button><button type="button" data-v="notional" aria-pressed="false">Notional</button></div></div>
+        <div class="two" data-show="fc_mode=margin">
+          <div class="f"><label for="fc_m">Margin</label><div class="in"><span class="ax">₹</span><input id="fc_m" type="number" value="10000" min="0" step="1000"></div></div>
+          <div class="f"><label for="fc_l">Leverage</label><div class="in"><input id="fc_l" type="number" value="10" min="1" max="25" step="1"><span class="ax r">x</span></div></div>
+        </div>
+        <div class="f" data-show="fc_mode=notional"><label for="fc_n">Notional</label><div class="in"><span class="ax">₹</span><input id="fc_n" type="number" value="100000" min="0" step="10000"></div></div>
+        <div class="two">
+          <div class="f"><div class="lbl">Entry</div><div class="tog" data-tog="fc_en"><button type="button" data-v="m" aria-pressed="false">Maker</button><button type="button" data-v="t" aria-pressed="true">Taker</button></div></div>
+          <div class="f"><div class="lbl">Exit</div><div class="tog" data-tog="fc_ex"><button type="button" data-v="m" aria-pressed="false">Maker</button><button type="button" data-v="t" aria-pressed="true">Taker</button></div></div>
+        </div>
+        <div class="f"><label for="fc_tr"><span class="hi">Mahine mein kitne round trips</span><span class="en">Round trips per month</span></label><div class="in"><input id="fc_tr" type="number" value="20" min="0" step="1"><span class="ax r">/mo</span></div></div>
+      </div>
+      <div class="calc-out" id="fc_out" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 OPTIONS ============ -->
+<section class="sec" id="options">
+  <div class="sec-hd">
+    <div class="eyebrow">04 · Options</div>
+    <h2><span class="hi">Options fees</span><span class="en">Options fees</span></h2>
+    <p class="lead hi">Options ki fees futures se bhi kam hain, aur ek <b>cap</b> hai taaki sasta option khareedne wale ki fee premium kha na jaaye.</p>
+    <p class="lead en">Options fees are even lower than futures, and there's a <b>cap</b> so fees never eat a cheap option's premium.</p>
+  </div>
+
+  <div class="grid4">
+    <div class="card card-pad"><h4>Call</h4><p class="hi" style="margin:6px 0 0;font-size:14px">"Price upar jaayega" ka right. Jaise ghar ka token amount — fixed price pe khareedne ka haq.</p><p class="en" style="margin:6px 0 0;font-size:14px">The right to gain if the price rises, like a token amount that locks a purchase price.</p></div>
+    <div class="card card-pad"><h4>Put</h4><p class="hi" style="margin:6px 0 0;font-size:14px">"Price neeche jaayega" ka right. Jaise insurance — girne pe kaam aata hai.</p><p class="en" style="margin:6px 0 0;font-size:14px">The right to gain if the price falls, like insurance that pays out on a drop.</p></div>
+    <div class="card card-pad"><h4>Premium</h4><p class="hi" style="margin:6px 0 0;font-size:14px">Option ki keemat, jo buyer seller ko deta hai. Buyer ka max loss = premium.</p><p class="en" style="margin:6px 0 0;font-size:14px">The option's price, paid by the buyer to the seller. A buyer's maximum loss is the premium.</p></div>
+    <div class="card card-pad"><h4>Strike · Expiry</h4><p class="hi" style="margin:6px 0 0;font-size:14px">Strike = tay kiya hua price. Expiry = option kab khatam hoga. Daily expiry bhi hote hain.</p><p class="en" style="margin:6px 0 0;font-size:14px">Strike is the agreed price. Expiry is when the option ends. Daily expiries exist too.</p></div>
+    <div class="card card-pad"><h4>ITM / OTM</h4><p class="hi" style="margin:6px 0 0;font-size:14px">ITM (In-The-Money) = expiry pe option ki value hai. OTM = value zero.</p><p class="en" style="margin:6px 0 0;font-size:14px">ITM (in the money) means the option has value at expiry. OTM means it's worth zero.</p></div>
+    <div class="card card-pad"><h4><span class="hi">Buyer vs Seller</span><span class="en">Buyer vs Seller</span></h4><p class="hi" style="margin:6px 0 0;font-size:14px">Buyer premium deta hai, kabhi liquidate nahi hota. Seller premium leta hai, margin rakhta hai, liquidate ho sakta hai.</p><p class="en" style="margin:6px 0 0;font-size:14px">The buyer pays the premium and is never liquidated. The seller collects it, posts margin and can be liquidated.</p></div>
+    <div class="card card-pad"><h4>Notional</h4><p class="hi" style="margin:6px 0 0;font-size:14px">Underlying price × quantity. Trading aur delivery fee isi pe calculate hoti hai.</p><p class="en" style="margin:6px 0 0;font-size:14px">Underlying price × quantity. Trading and delivery fees are calculated on this.</p></div>
+    <div class="card card-pad"><h4>Cap</h4><p class="hi" style="margin:6px 0 0;font-size:14px">Fee ki upper limit. Fee kabhi premium ke <span data-r="optCap"></span> se zyada nahi hogi.</p><p class="en" style="margin:6px 0 0;font-size:14px">The fee ceiling. The fee can never exceed <span data-r="optCap"></span> of the premium.</p></div>
+  </div>
+
+  <div class="tablewrap" style="margin-top:18px">
+    <table class="t">
+      <thead><tr><th>Fee</th><th class="num">Rate</th><th><span class="hi">Kab lagti hai</span><span class="en">When it applies</span></th><th>Cap</th></tr></thead>
+      <tbody>
+        <tr><td><b>Maker</b></td><td class="num" data-r="optMaker"></td><td><span class="hi">Order book mein wait karke fill</span><span class="en">Order rests, then fills</span></td><td><span data-r="optCap"></span> <span class="hi">of premium</span><span class="en">of premium</span></td></tr>
+        <tr><td><b>Taker</b></td><td class="num" data-r="optTaker"></td><td><span class="hi">Turant fill</span><span class="en">Fills instantly</span></td><td><span data-r="optCap"></span> <span class="hi">of premium</span><span class="en">of premium</span></td></tr>
+        <tr><td><b>Delivery</b></td><td class="num" data-r="optDelivery"></td><td><span class="hi">Sirf jab position ITM expire ho. <b>Daily expiry pe nahi.</b></span><span class="en">Only when a position expires ITM. <b>Not on daily expiries.</b></span></td><td><span data-r="optDeliveryCap"></span> <span class="hi">of premium</span><span class="en">of premium</span></td></tr>
+        <tr><td><b>Liquidation</b></td><td class="num" data-r="optLiq"></td><td><span class="hi">Sirf sellers, jab forcibly liquidate hon</span><span class="en">Sellers only, when forcibly liquidated</span></td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note"><span class="hi">Sab options fees pe <span data-r="gst"></span> GST alag se.</span><span class="en"><span data-r="gst"></span> GST applies separately on all options fees.</span></p>
+
+  <div class="calc" id="calc-oc">
+    <div class="calc-hd"><h4><span class="hi">Options fee calculator</span><span class="en">Options fee calculator</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="presets" role="group" aria-label="Examples">
+          <button class="chip" type="button" data-oc="atm" aria-pressed="true"><span class="hi">Normal option</span><span class="en">Typical option</span></button>
+          <button class="chip" type="button" data-oc="otm" aria-pressed="false"><span class="hi">Sasta OTM (cap lagega)</span><span class="en">Cheap OTM (cap kicks in)</span></button>
+        </div>
+        <div class="two">
+          <div class="f"><label for="oc_px"><span class="hi">BTC price</span><span class="en">BTC price</span></label><div class="in"><span class="ax">₹</span><input id="oc_px" type="number" value="8500000" min="0" step="100000"></div></div>
+          <div class="f"><label for="oc_q"><span class="hi">Quantity</span><span class="en">Quantity</span></label><div class="in"><input id="oc_q" type="number" value="0.01" min="0" step="0.01"><span class="ax r">BTC</span></div></div>
+        </div>
+        <div class="f"><label for="oc_pr"><span class="hi">Premium (1 BTC ke hisaab se)</span><span class="en">Premium (per 1 BTC)</span></label><div class="in"><span class="ax">₹</span><input id="oc_pr" type="number" value="150000" min="0" step="1000"></div>
+          <div class="hint"><span class="hi">Total premium = premium × quantity</span><span class="en">Total premium = premium × quantity</span></div></div>
+        <div class="two">
+          <div class="f"><div class="lbl">Order</div><div class="tog" data-tog="oc_mt"><button type="button" data-v="m" aria-pressed="false">Maker</button><button type="button" data-v="t" aria-pressed="true">Taker</button></div></div>
+          <div class="f"><div class="lbl"><span class="hi">Expiry pe</span><span class="en">At expiry</span></div><div class="tog" data-tog="oc_ex"><button type="button" data-v="otm" aria-pressed="true">OTM</button><button type="button" data-v="itm" aria-pressed="false">ITM</button></div></div>
+        </div>
+        <div class="f"><div class="lbl"><span class="hi">Contract type</span><span class="en">Contract type</span></div><div class="tog" data-tog="oc_daily"><button type="button" data-v="n" aria-pressed="true"><span class="hi">Weekly / monthly</span><span class="en">Weekly / monthly</span></button><button type="button" data-v="y" aria-pressed="false">Daily expiry</button></div></div>
+      </div>
+      <div class="calc-out" id="oc_out" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="note"><span class="hi">Illustrative example hai — actual contract size aur premium platform pe dekho.</span><span class="en">Illustrative only; check the actual contract size and premium on the platform.</span></p>
+</section>
+
+<!-- ============ 05 FUNDING ============ -->
+<section class="sec" id="funding">
+  <div class="sec-hd">
+    <div class="eyebrow">05 · Perpetuals</div>
+    <h2>Funding</h2>
+    <p class="lead hi">Funding <b>fee nahi hai</b>. Yeh longs aur shorts ke beech ka chhota payment hai. <b>Niyam isme se ek paisa nahi kamata.</b></p>
+    <p class="lead en">Funding <b>is not a fee</b>. It's a small payment between longs and shorts. <b>Niyam earns nothing from it.</b></p>
+  </div>
+
+  <div class="analogy">
+    <div class="ic">∞</div>
+    <div>
+      <p class="hi"><b>Perpetual ki expiry nahi hoti</b>, toh uska price spot price se door bhaag sakta hai. Funding ek <b>rassi</b> ki tarah hai jo dono ko baandh ke rakhti hai. Jis side zyada bheed hai (jaise sab long hain aur price spot se upar chala gaya), wo side doosri side ko thoda sa "kiraya" deti hai. Isse balance wapas aata hai.</p>
+      <p class="en"><b>A perpetual never expires</b>, so its price could drift away from spot. Funding is the <b>rope</b> that keeps the two tied together. The crowded side (say everyone is long and the price runs above spot) pays a small "rent" to the other side, which pulls things back into balance.</p>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="tile"><span class="k"><span class="hi">Rate positive (+)</span><span class="en">Rate positive (+)</span></span><span class="v" style="font-size:20px">Longs → Shorts</span><span class="d hi">Long wale pay karte hain, short wale receive</span><span class="d en">Longs pay, shorts receive</span></div>
+    <div class="tile"><span class="k"><span class="hi">Rate negative (−)</span><span class="en">Rate negative (−)</span></span><span class="v" style="font-size:20px">Shorts → Longs</span><span class="d hi">Short wale pay karte hain, long wale receive</span><span class="d en">Shorts pay, longs receive</span></div>
+    <div class="tile"><span class="k"><span class="hi">Kab</span><span class="en">When</span></span><span class="v" style="font-size:20px"><span class="hi">Har 4 ya 8 ghante</span><span class="en">Every 4 or 8 h</span></span><span class="d hi">Contract pe depend. Us time position hai tabhi.</span><span class="d en">Depends on the contract. Only if you hold a position then.</span></div>
+  </div>
+
+  <div class="say">
+    <span class="who">Formula</span>
+    <p><code>Funding = Position value × Funding rate</code> &nbsp;·&nbsp; <code>Position value = Mark price × Contract size</code></p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="t">
+      <thead><tr><th></th><th>Trading fee</th><th>Funding</th></tr></thead>
+      <tbody>
+        <tr><td><span class="hi">Kaun leta hai</span><span class="en">Who receives it</span></td><td>Niyam</td><td><span class="hi">Doosra trader</span><span class="en">Another trader</span></td></tr>
+        <tr><td>GST</td><td class="yes">✓ <span data-r="gst"></span></td><td class="no">✗</td></tr>
+        <tr><td><span class="hi">Partner commission</span><span class="en">Partner commission</span></td><td class="yes">✓</td><td class="no">✗</td></tr>
+        <tr><td><span class="hi">Kab</span><span class="en">When</span></td><td><span class="hi">Har trade pe</span><span class="en">On every trade</span></td><td><span class="hi">Har 4/8 ghante, sirf open position pe</span><span class="en">Every 4/8 h, open positions only</span></td></tr>
+        <tr><td><span class="hi">Receive bhi ho sakta hai?</span><span class="en">Can a trader receive it?</span></td><td class="no">✗</td><td class="yes">✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="calc" id="calc-fu">
+    <div class="calc-hd"><h4><span class="hi">Funding calculator</span><span class="en">Funding calculator</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><label for="fu_n"><span class="hi">Position value</span><span class="en">Position value</span></label><div class="in"><span class="ax">₹</span><input id="fu_n" type="number" value="500000" min="0" step="10000"></div></div>
+        <div class="f"><div class="lbl"><span class="hi">Trader ki side</span><span class="en">Trader's side</span></div><div class="tog" data-tog="fu_side"><button type="button" data-v="long" aria-pressed="true">Long</button><button type="button" data-v="short" aria-pressed="false">Short</button></div></div>
+        <div class="f"><label for="fu_r">Funding rate <output id="fu_ro"></output></label>
+          <input id="fu_r" type="range" min="-0.1" max="0.1" step="0.005" value="0.01">
+          <div class="rangeticks"><span>−0.10%</span><span>0</span><span>+0.10%</span></div></div>
+        <div class="two">
+          <div class="f"><div class="lbl">Interval</div><div class="tog" data-tog="fu_iv"><button type="button" data-v="4" aria-pressed="false">4h</button><button type="button" data-v="8" aria-pressed="true">8h</button></div></div>
+          <div class="f"><label for="fu_h"><span class="hi">Kitne ghante hold</span><span class="en">Hours held</span></label><div class="in"><input id="fu_h" type="number" value="24" min="0" step="1"><span class="ax r">h</span></div></div>
+        </div>
+      </div>
+      <div class="calc-out" id="fu_out" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 LIQUIDATION ============ -->
+<section class="sec" id="liquidation">
+  <div class="sec-hd">
+    <div class="eyebrow">06 · Risk</div>
+    <h2>Liquidation</h2>
+    <p class="lead hi">Jab loss itna ho jaaye ki margin <b>maintenance margin</b> se neeche chala jaaye, toh risk engine position khud band kar deta hai.</p>
+    <p class="lead en">When losses push the margin below the <b>maintenance margin</b>, the risk engine closes the position automatically.</p>
+  </div>
+
+  <div class="flow">
+    <div><b>Margin</b><span class="hi">Trader ne ₹10,000 lagaya, 10x</span><span class="en">Trader posts ₹10,000 at 10x</span></div>
+    <div><b>Loss</b><span class="hi">Price ulta chala, margin ghat raha</span><span class="en">Price moves against them, margin shrinks</span></div>
+    <div><b>Maintenance</b><span class="hi">Minimum margin line cross</span><span class="en">Crosses the minimum margin line</span></div>
+    <div><b>Close</b><span class="hi">Risk engine position band karta hai</span><span class="en">Risk engine closes the position</span></div>
+    <div><b>Charges</b><span class="hi">Taker fee + clearance fee</span><span class="en">Taker fee + clearance fee</span></div>
+    <div><b>Insurance fund</b><span class="hi">Clearance fee yahan jaati hai</span><span class="en">The clearance fee goes here</span></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card card-pad">
+      <h4><span class="hi">2 charges lagte hain</span><span class="en">Two charges apply</span></h4>
+      <ol class="prose" style="margin-top:8px">
+        <li><b>Taker fee</b> <span class="hi">closing trade pe (normal rate, <span data-r="futTaker"></span>)</span><span class="en">on the closing trade (normal rate, <span data-r="futTaker"></span>)</span></li>
+        <li><b>Insurance Clearance Fee</b> = <span class="hi">liquidated notional × clearance rate (har symbol ka alag)</span><span class="en">liquidated notional × clearance rate (varies by symbol)</span></li>
+      </ol>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Trader ke liye achhi baatein</span><span class="en">What protects the trader</span></h4>
+      <ul class="prose" style="margin-top:8px">
+        <li class="hi">Margin kam pada toh clearance fee <b>maaf</b>, insurance fund loss uthata hai.</li>
+        <li class="en">If margin runs short, the clearance fee is <b>waived</b> and the insurance fund absorbs the loss.</li>
+        <li class="hi">Trader <b>margin se zyada kabhi nahi</b> khota.</li>
+        <li class="en">A trader <b>never loses more than the margin</b> at risk.</li>
+        <li class="hi">Stop-loss, take-profit ya khud close karne pe clearance fee <b>nahi</b>.</li>
+        <li class="en">No clearance fee on stop-loss, take-profit or manual closes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="say">
+    <span class="who"><span class="hi">Affiliate ko kaise samjhaye</span><span class="en">How to explain it</span></span>
+    <p class="hi">"Stop-loss lagao — liquidation tak pahuncho hi mat. Stop-loss pe sirf normal fee lagti hai, clearance fee nahi. Aur insurance fund ki wajah se kisi aur ke loss ka bojh aap pe nahi aata."</p>
+    <p class="en">"Use a stop-loss so you never reach liquidation. A stop-loss only pays the normal fee, not the clearance fee. And because of the insurance fund, other traders' losses are never pushed onto you."</p>
+  </div>
+
+  <div class="calc" id="calc-lq">
+    <div class="calc-hd"><h4><span class="hi">Liquidation charges</span><span class="en">Liquidation charges</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="two">
+          <div class="f"><label for="lq_n">Notional</label><div class="in"><span class="ax">₹</span><input id="lq_n" type="number" value="100000" min="0" step="10000"></div></div>
+          <div class="f"><label for="lq_l">Leverage</label><div class="in"><input id="lq_l" type="number" value="10" min="1" max="25" step="1"><span class="ax r">x</span></div></div>
+        </div>
+        <div class="f"><label for="lq_c">Clearance rate</label><div class="in"><input id="lq_c" type="number" value="0.5" min="0" step="0.05"><span class="ax r">%</span></div>
+          <div class="hint"><span class="hi">Example rate hai — symbol ke hisaab se alag hota hai.</span><span class="en">Example rate only; it varies by symbol.</span><span class="tbc internal" title="Publish a per-symbol clearance-rate table">TBC</span></div></div>
+        <div class="f"><label for="lq_left"><span class="hi">Liquidation ke baad bacha margin</span><span class="en">Margin left at liquidation</span></label><div class="in"><span class="ax">₹</span><input id="lq_left" type="number" value="1000" min="0" step="100"></div>
+          <div class="hint"><span class="hi">Agar yeh clearance fee se kam hai, toh fee waive.</span><span class="en">If this is less than the clearance fee, the fee is waived.</span></div></div>
+      </div>
+      <div class="calc-out" id="lq_out" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 WALLET ============ -->
+<section class="sec" id="wallet">
+  <div class="sec-hd">
+    <div class="eyebrow">07 · Wallet &amp; onboarding</div>
+    <h2><span class="hi">Deposit, withdrawal, KYC</span><span class="en">Deposits, withdrawals, KYC</span></h2>
+    <p class="lead hi">Sab kuch INR mein, banking system ke andar. Koi crypto wallet manage nahi karna.</p>
+    <p class="lead en">Everything is in INR, inside the banking system. There's no crypto wallet to manage.</p>
+  </div>
+  <div class="tablewrap">
+    <table class="t">
+      <thead><tr><th><span class="hi">Kya</span><span class="en">What</span></th><th><span class="hi">Kaise</span><span class="en">How</span></th><th class="num">Fee</th><th><span class="hi">Kitna time</span><span class="en">Time</span></th></tr></thead>
+      <tbody>
+        <tr><td><b>INR deposit</b></td><td>UPI / IMPS</td><td class="num">Free</td><td><span class="hi">Seconds mein</span><span class="en">Seconds</span></td></tr>
+        <tr><td><b>INR deposit</b></td><td>NEFT / manual bank transfer</td><td class="num">Free</td><td><span class="hi">Bank timing ke hisaab se</span><span class="en">Per bank timings</span></td></tr>
+        <tr><td><b>INR withdrawal</b></td><td><span class="hi">Verified bank account (IMPS)</span><span class="en">Verified bank account (IMPS)</span></td><td class="num">Free</td><td><span class="hi">Minutes, zyaadatar 30 min ke andar</span><span class="en">Minutes; most within 30 min</span></td></tr>
+        <tr><td><b>Min deposit</b></td><td>—</td><td class="num" data-r="minDep"></td><td><span class="tbc internal" title="Site also says 'No minimum deposit' in the footer">TBC</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card card-pad">
+      <h4>KYC · <span class="hi">~2–5 minute</span><span class="en">~2–5 minutes</span></h4>
+      <ol class="prose" style="margin-top:8px">
+        <li class="hi">Email se signup (partner code ke saath!)</li><li class="en">Sign up with email (using the partner code!)</li>
+        <li class="hi">Aadhaar — DigiLocker se, paperless</li><li class="en">Aadhaar via DigiLocker, paperless</li>
+        <li class="hi">PAN verification</li><li class="en">PAN verification</li>
+        <li class="hi">Bank account link → deposit → trade</li><li class="en">Link bank account → deposit → trade</li>
+      </ol>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Security &amp; trust</span><span class="en">Security &amp; trust</span></h4>
+      <ul class="prose" style="margin-top:8px">
+        <li class="hi">FIU-IND registered VASP · REID <span data-r="fiuReid"></span></li><li class="en">FIU-IND registered VASP · REID <span data-r="fiuReid"></span></li>
+        <li class="hi">OTP 2FA har login aur withdrawal pe</li><li class="en">OTP 2FA on every login and withdrawal</li>
+        <li class="hi">24/7 monitoring, KYC/AML (PMLA)</li><li class="en">24/7 monitoring, KYC/AML (PMLA)</li>
+        <li class="hi">Segregated client accounts, $1M insurance, multi-bank rails (Partner Deck)</li><li class="en">Segregated client accounts, $1M insurance, multi-bank rails (Partner Deck)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn"><span class="ic">!</span><div>
+    <span class="hi"><b>Sabse important:</b> user ko signup ke time hi partner code daalna hai. Attribution pehle click se lock hota hai — baad mein code jodna possible hai ya nahi, confirm karke hi bolo.</span>
+    <span class="en"><b>Most important:</b> users must enter the partner code at signup. Attribution locks from the first click. Don't say a code can be added later unless it's confirmed.</span>
+  </div></div>
+</section>
+
+<!-- ============ 08 COMMISSION ============ -->
+<section class="sec" id="commission">
+  <div class="sec-hd">
+    <div class="eyebrow">08 · Partner programme</div>
+    <h2><span class="hi">Partner commission kaise banta hai</span><span class="en">How partner commission works</span></h2>
+    <p class="lead hi">Standard offer: partner ke code se aaye users ki <b>trading fees ka <span data-r="share"></span>, lifetime</b>. One-time bounty nahi, jab tak user trade kare tab tak.</p>
+    <p class="lead en">The standard offer is <b><span data-r="share"></span> of trading fees for life</b> from every user who joins with the partner's code. It isn't a one-time bounty; it pays for as long as the user trades.</p>
+  </div>
+
+  <div class="flow">
+    <div><b><span class="hi">Sign</span><span class="en">Sign</span></b><span class="hi">Partnership letter</span><span class="en">Partnership letter</span></div>
+    <div><b><span class="hi">Code</span><span class="en">Code</span></b><span class="hi">Referral code + tracked link</span><span class="en">Referral code + tracked link</span></div>
+    <div><b>Signup</b><span class="hi">User code se aata hai — attribution lifetime</span><span class="en">User joins with the code; attribution is for life</span></div>
+    <div><b>Trade</b><span class="hi">KYC, deposit, trading</span><span class="en">KYC, deposit, trading</span></div>
+    <div><b>Dashboard</b><span class="hi">Commission daily dikhta hai</span><span class="en">Commission visible daily</span></div>
+    <div><b>Payout</b><span class="hi">Monthly reconcile + pay</span><span class="en">Reconciled and paid monthly</span></div>
+  </div>
+
+  <div class="tablewrap">
+    <table class="t">
+      <thead><tr><th><span class="hi">Kis pe commission milta hai?</span><span class="en">What earns commission?</span></th><th></th></tr></thead>
+      <tbody>
+        <tr><td><span class="hi">Futures trading fees (maker + taker)</span><span class="en">Futures trading fees (maker + taker)</span></td><td class="yes">✓</td></tr>
+        <tr><td><span class="hi">Options trading fees</span><span class="en">Options trading fees</span></td><td class="yes">✓</td></tr>
+        <tr><td><span class="hi">Liquidation pe taker fee</span><span class="en">Taker fee on a liquidation close</span></td><td><span class="tbc">TBC</span></td></tr>
+        <tr><td><span class="hi">Funding (Niyam ki kamai nahi)</span><span class="en">Funding (not Niyam revenue)</span></td><td class="no">✗</td></tr>
+        <tr><td>GST</td><td class="no">✗</td></tr>
+        <tr><td><span class="hi">Insurance clearance fee (insurance fund mein jaati hai)</span><span class="en">Insurance clearance fee (goes to the insurance fund)</span></td><td class="no">✗</td></tr>
+        <tr><td><span class="hi">Deposits / withdrawals (free hain)</span><span class="en">Deposits / withdrawals (they're free)</span></td><td class="no">✗</td></tr>
+        <tr><td><span class="hi">User ka profit ya loss</span><span class="en">User profit or loss</span></td><td class="no">✗ <span class="hi">kabhi nahi</span><span class="en">never</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsec">
+    <h3><span class="hi">Website pe 20% likha hai — confusion</span><span class="en">"The website says 20%": the confusion</span></h3>
+    <div class="tablewrap">
+      <table class="t">
+        <thead><tr><th></th><th>Partner programme (B2B)</th><th>Refer &amp; Earn (retail)</th></tr></thead>
+        <tbody>
+          <tr><td><span class="hi">Kiske liye</span><span class="en">Who it's for</span></td><td><span class="hi">Institutes, sub-brokers, creators, communities</span><span class="en">Institutes, sub-brokers, creators, communities</span></td><td><span class="hi">Koi bhi user jo dost ko refer kare</span><span class="en">Any user referring a friend</span></td></tr>
+          <tr><td>Share</td><td><b data-r="share"></b> <span class="hi">lifetime (letter ke hisaab se)</span><span class="en">for life (per the letter)</span></td><td>20% <span class="hi">(site pe 30/40/50% bhi dikhta hai)</span><span class="en">(the site also shows 30/40/50%)</span> <span class="tbc">TBC</span></td></tr>
+          <tr><td>Payout</td><td><span class="hi">Dashboard daily, pay monthly</span><span class="en">Dashboard daily, paid monthly</span></td><td><span class="hi">Daily (site ke hisaab se)</span><span class="en">Daily (per the site)</span></td></tr>
+          <tr><td>Extras</td><td><span class="hi">Webinars, RM pod, partner manager, events</span><span class="en">Webinars, RM pod, partner manager, events</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="say">
+      <span class="who"><span class="hi">Bolo</span><span class="en">Say</span></span>
+      <p class="hi">"Website wala Refer &amp; Earn retail users ke liye hai. Aap partner programme mein ho — alag agreement, <span data-r="share"></span> lifetime, dedicated support aur webinars ke saath."</p>
+      <p class="en">"Refer &amp; Earn on the website is for retail users. You'd be in the partner programme, which is a separate agreement: <span data-r="share"></span> for life, with dedicated support and webinars."</p>
+    </div>
+  </div>
+
+  <div class="calc" id="calc-cw">
+    <div class="calc-hd"><h4><span class="hi">Fee &amp; commission split</span><span class="en">Fee &amp; commission split</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><label for="cw_v"><span class="hi">Trading volume (notional)</span><span class="en">Trading volume (notional)</span></label><div class="in"><span class="ax">₹</span><input id="cw_v" type="number" value="1000000" min="0" step="100000"></div>
+          <div class="hint"><span class="hi">Ek trade ya poore mahine ka volume — dono chalega.</span><span class="en">One trade or a whole month's volume; either works.</span></div></div>
+        <div class="f"><label for="cw_mk"><span class="hi">Maker orders ka hissa</span><span class="en">Share of maker orders</span> <output id="cw_mko"></output></label>
+          <input id="cw_mk" type="range" min="0" max="100" step="1" value="33">
+          <div class="rangeticks"><span><span class="hi">Sab taker</span><span class="en">All taker</span></span><span><span class="hi">Sab maker</span><span class="en">All maker</span></span></div></div>
+        <div class="two">
+          <div class="f"><label for="cw_d"><span class="hi">Trader discount</span><span class="en">Trader discount</span></label><div class="in"><input id="cw_d" type="number" value="10" min="0" max="100" step="1"><span class="ax r">%</span></div></div>
+          <div class="f"><label for="cw_s">Partner share</label><div class="in"><input id="cw_s" type="number" value="25" min="0" max="75" step="1"><span class="ax r">%</span></div></div>
+        </div>
+      </div>
+      <div class="calc-out" id="cw_out" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="note internal"><span class="tbc">TBC</span> <span class="hi">Calculator commission ko gross fee (discount se pehle, GST ke bina) pe maanta hai. Discount Niyam fund karta hai. Letter mein confirm karo.</span><span class="en">The calculator pays commission on the gross fee (before discount, excluding GST), with Niyam funding the discount. Confirm this in the letter.</span></p>
+</section>
+
+<!-- ============ 09 EARNINGS ============ -->
+<section class="sec" id="earnings">
+  <div class="sec-hd">
+    <div class="eyebrow">09 · <span class="hi">"Mujhe kitna milega?"</span><span class="en">"How much will I earn?"</span></div>
+    <h2><span class="hi">Earnings calculator</span><span class="en">Earnings calculator</span></h2>
+    <p class="lead hi">Do tarike: <b>Deck model</b> (Niyam ka official per-trader number) ya <b>khud build karo</b> (affiliate ke traders ki actual activity se).</p>
+    <p class="lead en">Two ways: the <b>deck model</b> (Niyam's official per-trader figure), or <b>build it up</b> from the affiliate's actual trader activity.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="tile"><span class="k"><span class="hi">Futures / trader / mahina</span><span class="en">Futures / trader / month</span></span><span class="v" data-x="mFut"></span><span class="d" data-x="mFutD"></span></div>
+    <div class="tile"><span class="k"><span class="hi">Options / trader / mahina</span><span class="en">Options / trader / month</span></span><span class="v" data-x="mOpt"></span><span class="d" data-x="mOptD"></span></div>
+    <div class="tile hl"><span class="k"><span class="hi">Partner ko / trader / saal</span><span class="en">To partner / trader / year</span></span><span class="v" data-x="m12yr"></span><span class="d"><span class="hi">Month-one activity pe</span><span class="en">At month-one activity:</span> <span data-x="m1yr"></span></span></div>
+  </div>
+  <p class="note"><span class="hi">Niyam ke modelled month-12 activity levels, ek leading Indian exchange se benchmark. <b>Active trader</b> = us mahine trade kiya, sirf signup nahi. Signup → first trade ~<span data-x="conv"></span>.</span><span class="en">Niyam's modelled month-12 activity levels, benchmarked against a leading Indian exchange. An <b>active trader</b> traded that month; a signup alone doesn't count. Signup → first trade is ~<span data-x="conv"></span>.</span></p>
+
+  <div class="calc" id="calc-ep">
+    <div class="calc-hd"><h4><span class="hi">Partner earnings projector</span><span class="en">Partner earnings projector</span></h4><span class="pill">Calculator</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><div class="lbl">Mode</div>
+          <div class="tog" data-tog="ep_mode"><button type="button" data-v="deck" aria-pressed="true">Deck model</button><button type="button" data-v="build" aria-pressed="false"><span class="hi">Khud build karo</span><span class="en">Build it up</span></button></div></div>
+        <div class="two">
+          <div class="f"><label for="ep_su"><span class="hi">Signups</span><span class="en">Signups</span></label><div class="in"><input id="ep_su" type="number" value="1000" min="0" step="100"></div></div>
+          <div class="f"><label for="ep_cv"><span class="hi">Active ban-te hain</span><span class="en">Become active</span></label><div class="in"><input id="ep_cv" type="number" value="10" min="0" max="100" step="1"><span class="ax r">%</span></div></div>
+        </div>
+        <div data-show="ep_mode=deck">
+          <div class="f"><label for="ep_act"><span class="hi">Activity level</span><span class="en">Activity level</span> <output id="ep_acto"></output></label>
+            <input id="ep_act" type="range" min="0" max="100" step="5" value="100">
+            <div class="rangeticks"><span>Month-one</span><span>Month-12</span></div></div>
+        </div>
+        <div data-show="ep_mode=build">
+          <div class="two">
+            <div class="f"><label for="ep_f"><span class="hi">Avg funds / trader</span><span class="en">Avg funds / trader</span></label><div class="in"><span class="ax">₹</span><input id="ep_f" type="number" value="25000" min="0" step="1000"></div></div>
+            <div class="f"><label for="ep_u"><span class="hi">Margin mein use</span><span class="en">Used as margin</span></label><div class="in"><input id="ep_u" type="number" value="60" min="0" max="100" step="5"><span class="ax r">%</span></div></div>
+          </div>
+          <div class="two">
+            <div class="f"><label for="ep_l">Leverage</label><div class="in"><input id="ep_l" type="number" value="10" min="1" max="25" step="1"><span class="ax r">x</span></div></div>
+            <div class="f"><label for="ep_rt"><span class="hi">Round trips / mahina</span><span class="en">Round trips / month</span></label><div class="in"><input id="ep_rt" type="number" value="20" min="0" step="1"></div></div>
+          </div>
+          <div class="f"><label for="ep_mk"><span class="hi">Maker orders ka hissa</span><span class="en">Share of maker orders</span> <output id="ep_mko"></output></label>
+            <input id="ep_mk" type="range" min="0" max="100" step="1" value="33"></div>
+        </div>
+        <div class="f"><label for="ep_s">Partner share <output id="ep_so"></output></label>
+          <input id="ep_s" type="range" min="5" max="75" step="1" value="25">
+          <div class="rangeticks"><span>5%</span><span>25%</span><span>50%</span><span>75%</span></div>
+          <div class="hint internal"><span class="hi">25% se upar = approval chahiye. Affiliate ke saamne 25% pe hi rakho.</span><span class="en">Above 25% needs approval. Keep it at 25% in front of an affiliate.</span></div></div>
+      </div>
+      <div class="calc-out" id="ep_out" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="note"><span class="hi">Sab numbers illustrative hain, guarantee nahi. Earnings users ki trading activity pe depend karti hai. Commission applicable taxes aur partnership letter ke terms ke hisaab se.</span><span class="en">All figures are illustrative, not guaranteed. Earnings depend on users' trading activity. Commission is subject to applicable taxes and the partnership letter.</span></p>
+</section>
+
+<!-- ============ 10 DEAL DESK (internal) ============ -->
+<section class="sec internal" id="dealdesk">
+  <div class="sec-hd">
+    <div class="eyebrow">10 · <span class="pill int">Internal only</span></div>
+    <h2>Deal desk: <span class="hi">share 75% tak</span><span class="en">shares up to 75%</span></h2>
+    <p class="lead hi">Standard <span data-r="share"></span> hai. Bade partners ke liye <span data-r="shareMax"></span> tak ja sakte hain — <b>sirf approval ke saath</b>. Yeh tool dikhata hai ki har share level pe Niyam ke paas kya bachta hai.</p>
+    <p class="lead en">The standard is <span data-r="share"></span>. For large partners we can go up to <span data-r="shareMax"></span>, <b>only with approval</b>. This tool shows what Niyam keeps at each share level.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card card-pad">
+      <h4><span class="hi">Meeting mein kya bolna hai</span><span class="en">What to say in the meeting</span></h4>
+      <div class="say" style="margin-bottom:0">
+        <p class="hi">"Standard <span data-r="share"></span> lifetime hai. Aapke volume ke hisaab se main team se custom structure pe baat kar sakta hoon — aap expected active traders ka number share kijiye."</p>
+        <p class="en">"The standard is <span data-r="share"></span> for life. Based on your volume I can discuss a custom structure with the team. Could you share how many active traders you expect?"</p>
+      </div>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Zyada share ke badle kya maange (suggestions)</span><span class="en">What to ask for in return (suggestions)</span></h4>
+      <ul class="prose" style="margin-top:8px">
+        <li class="hi">Committed active traders (jaise 3 mahine mein 500+)</li><li class="en">Committed active traders (e.g. 500+ within 3 months)</li>
+        <li class="hi">Step-up: pehle 25%, target hit hone pe upar</li><li class="en">Step-ups: start at 25%, rise when targets are hit</li>
+        <li class="hi">Co-marketing: webinars, content, events</li><li class="en">Co-marketing: webinars, content, events</li>
+        <li class="hi">Exclusivity window crypto derivatives mein</li><li class="en">An exclusivity window in crypto derivatives</li>
+      </ul>
+      <p class="note" style="margin-bottom:0"><span class="tbc">TBC</span> <span class="hi">Approval matrix (kaun sign karega, kis level pe) abhi define nahi.</span><span class="en">The approval matrix (who signs off at which level) isn't defined yet.</span></p>
+    </div>
+  </div>
+
+  <div class="calc" id="calc-dd">
+    <div class="calc-hd"><h4><span class="hi">Share vs Niyam margin</span><span class="en">Share vs Niyam margin</span></h4><span class="pill int">Internal</span></div>
+    <div class="calc-bd">
+      <div class="calc-in">
+        <div class="f"><label for="dd_s">Partner share <output id="dd_so"></output></label>
+          <input id="dd_s" type="range" min="5" max="75" step="1" value="25">
+          <div class="rangeticks"><span>5%</span><span>25%</span><span>50%</span><span>75%</span></div></div>
+        <div class="two">
+          <div class="f"><label for="dd_vol"><span class="hi">Monthly volume</span><span class="en">Monthly volume</span></label><div class="in"><span class="ax">$</span><input id="dd_vol" type="number" value="10000000" min="0" step="1000000"></div></div>
+          <div class="f"><label for="dd_bps"><span class="hi">Blended fee</span><span class="en">Blended fee</span></label><div class="in"><input id="dd_bps" type="number" value="4" min="0" step="0.5"><span class="ax r">bps</span></div></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="dd_d"><span class="hi">Trader discount</span><span class="en">Trader discount</span></label><div class="in"><input id="dd_d" type="number" value="10" min="0" max="100" step="1"><span class="ax r">%</span></div></div>
+          <div class="f"><label for="dd_fx">₹ / $</label><div class="in"><input id="dd_fx" type="number" value="95" min="1" step="0.5"></div></div>
+        </div>
+      </div>
+      <div class="calc-out" id="dd_out" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="subsec">
+    <h3><span class="hi">Niyam ke paas kitna bachta hai (gross fee ka %)</span><span class="en">What Niyam keeps (% of gross fees)</span></h3>
+    <div class="tablewrap" id="dd_matrix"></div>
+    <p class="note"><span class="hi">Platform, tech aur operating costs se pehle. Red = Niyam nuksaan mein.</span><span class="en">Before platform, tech and operating costs. Red = Niyam loses money.</span></p>
+  </div>
+</section>
+
+<!-- ============ 11 FAQ ============ -->
+<section class="sec" id="faq">
+  <div class="sec-hd">
+    <div class="eyebrow">11 · <span class="hi">Affiliate puchhe → hum bolein</span><span class="en">Affiliate asks → we answer</span></div>
+    <h2><span class="hi">Affiliate FAQ</span><span class="en">Affiliate FAQ</span></h2>
+    <p class="lead hi">Har answer ka pehla hissa <b>bolne ke liye</b> hai (10–20 second). Neeche detail aur example.</p>
+    <p class="lead en">The first part of each answer is <b>for saying out loud</b> (10–20 seconds). Detail and examples follow.</p>
+  </div>
+  <div class="faqfilter"><div class="in"><span class="ax">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+    <input id="faq_q" type="search" aria-label="Filter FAQ"></div></div>
+  <div class="faqbar" id="faqCats" role="group" aria-label="FAQ categories"></div>
+  <div class="faqcount" id="faqCount"></div>
+  <div id="faqList"></div>
+</section>
+
+<!-- ============ 12 MEETING PLAYBOOK ============ -->
+<section class="sec" id="meeting">
+  <div class="sec-hd">
+    <div class="eyebrow">12 · In-person</div>
+    <h2><span class="hi">Meeting playbook</span><span class="en">Meeting playbook</span></h2>
+    <p class="lead hi">Pehle suno, phir pitch. Numbers hamesha calculator se dikhao, dimaag se nahi.</p>
+    <p class="lead en">Listen first, then pitch. Always show numbers from the calculator, not from memory.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card card-pad">
+      <h4><span class="hi">Meeting se pehle</span><span class="en">Before</span></h4>
+      <ul class="check" style="margin-top:8px">
+        <li class="hi">Partner type samjho: institute, sub-broker, creator, community</li><li class="en">Know the partner type: institute, sub-broker, creator, community</li>
+        <li class="hi">Unke audience ka size aur trading experience</li><li class="en">Their audience size and trading experience</li>
+        <li class="hi">Rate card print / phone pe khula</li><li class="en">Rate card printed or open on your phone</li>
+        <li class="hi">Partner Deck + One-Pager + Tax one-pager ready</li><li class="en">Partner Deck, One-Pager and tax one-pager ready</li>
+        <li class="hi">Laptop pe Meeting mode ON</li><li class="en">Meeting mode ON on the laptop</li>
+      </ul>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Meeting ke dauraan</span><span class="en">During</span></h4>
+      <ol class="prose" style="margin-top:8px">
+        <li class="hi"><b>Discover:</b> kitne traders, kya trade karte hain, abhi kaunsa platform</li><li class="en"><b>Discover:</b> how many traders, what they trade, which platform today</li>
+        <li class="hi"><b>Pitch:</b> 30-second pitch</li><li class="en"><b>Pitch:</b> the 30-second pitch</li>
+        <li class="hi"><b>Numbers:</b> earnings calculator unke numbers se</li><li class="en"><b>Numbers:</b> the earnings calculator with their numbers</li>
+        <li class="hi"><b>Objections:</b> FAQ se jawab, TBC ho toh "confirm karke batata hoon"</li><li class="en"><b>Objections:</b> answer from the FAQ; if it's TBC, "let me confirm"</li>
+        <li class="hi"><b>Next step:</b> letter sign → code → pehla webinar date</li><li class="en"><b>Next step:</b> sign the letter → code → first webinar date</li>
+      </ol>
+    </div>
+    <div class="card card-pad">
+      <h4><span class="hi">Meeting ke baad</span><span class="en">After</span></h4>
+      <ul class="check" style="margin-top:8px">
+        <li class="hi">24 ghante mein follow-up + deck</li><li class="en">Follow up with the deck within 24 hours</li>
+        <li class="hi">Jo sawaal ka jawab nahi tha, team se confirm karke bhejo</li><li class="en">Send answers to anything you couldn't answer, after confirming with the team</li>
+        <li class="hi">Custom share ki request ho toh deal desk ko numbers ke saath</li><li class="en">Take any custom-share request to the deal desk, with numbers</li>
+        <li class="hi">Platform walkthrough 2 working days mein schedule</li><li class="en">Schedule a platform walkthrough within 2 working days</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="subsec">
+    <h3><span class="hi">Yeh mat bolo → yeh bolo</span><span class="en">Don't say → say instead</span></h3>
+    <div id="dontSay"></div>
+  </div>
+</section>
+
+<!-- ============ 13 GLOSSARY ============ -->
+<section class="sec" id="glossary">
+  <div class="sec-hd">
+    <div class="eyebrow">13 · A–Z</div>
+    <h2>Glossary</h2>
+    <p class="lead hi">Koi bhi shabd samajh na aaye toh yahan dekho.</p>
+    <p class="lead en">If a word doesn't make sense, look it up here.</p>
+  </div>
+  <div class="faqfilter"><div class="in"><span class="ax">A–Z</span><input id="gl_q" type="search" aria-label="Filter glossary"></div></div>
+  <dl class="gloss" id="glossList"></dl>
+</section>
+
+<!-- ============ 14 OPEN ITEMS (internal) ============ -->
+<section class="sec internal" id="open">
+  <div class="sec-hd">
+    <div class="eyebrow">14 · <span class="pill int">Internal only</span></div>
+    <h2><span class="hi">Open items — abhi confirm hona baaki</span><span class="en">Open items: still to confirm</span></h2>
+    <p class="lead hi">In cheezon pe affiliate ko final jawab mat do. Confirm hote hi <code>assets/js/config.js</code> update karo.</p>
+    <p class="lead en">Don't give affiliates a final answer on these. Update <code>assets/js/config.js</code> as each one is confirmed.</p>
+  </div>
+  <div class="tablewrap"><table class="t"><thead><tr><th>Item</th><th><span class="hi">Status</span><span class="en">Status</span></th></tr></thead><tbody id="openList"></tbody></table></div>
+</section>
+
+</main>
+</div>
+
+<footer class="foot">
+  <p><b>Niyam Partner Playbook</b> · <span class="hi">Sirf internal use ke liye.</span><span class="en">For internal use only.</span> <span class="hi">Rates</span><span class="en">Rates as of</span> <span data-r="updated"></span>. <span class="hi">Sources:</span><span class="en">Sources:</span> <span id="srcList"></span>.</p>
+  <p class="hi">Crypto derivatives leveraged hain aur risk carry karte hain. Yeh guide investment ya tax advice nahi hai. Partner earnings illustrative hain, guarantee nahi. Niyam Exchange, Lightningnodes Technologies Pvt Ltd dwara operated, FIU-IND REID <span data-r="fiuReid"></span>.</p>
+  <p class="en">Crypto derivatives are leveraged and carry risk. This guide is not investment or tax advice. Partner earnings are illustrative, not guaranteed. Niyam Exchange is operated by Lightningnodes Technologies Pvt Ltd, FIU-IND REID <span data-r="fiuReid"></span>.</p>
+</footer>
+
+<button class="totop" id="totop" type="button" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</button>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/calculators.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
