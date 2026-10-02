@@ -21,8 +21,12 @@
     optMaker: C.opt.maker + '%', optTaker: C.opt.taker + '%', optCap: C.opt.cap + '%',
     optDelivery: C.opt.delivery + '%', optDeliveryCap: C.opt.deliveryCap + '%', optLiq: C.opt.liq.toFixed(2) + '%',
     gst: C.gst + '%', share: C.share + '%', shareMax: C.shareMax + '%', disc: C.disc + '%',
-    minDep: '₹' + C.minDep, maxLev: C.maxLev + 'x', fiuReid: C.fiuReid, updated: C.updated
+    minDep: '₹' + C.minDep, maxLev: C.maxLev + 'x', fiuReid: C.fiuReid, updated: C.updated,
+    entity: C.entity, disclosure: C.disclosure, disclaimer: C.disclaimer.en,
+    activationTarget: C.health.activationTarget + '%', activationAlert: C.health.activationAlert + '%',
+    healthGreen: '≥' + C.health.green, healthAmber: C.health.amber + '–' + (C.health.green - 1)
   };
+  Object.keys(C.sla).forEach(function (k) { R[k] = C.sla[k]; });
   var tk = 1e5 * C.fut.taker / 100, mk = 1e5 * C.fut.maker / 100, g = C.gst / 100, M = C.model;
   var EX = {
     tk1L: X.inr(tk), tk1Lg: X.inr(tk * g), tk1Lt: X.inr(tk * (1 + g)), rtTk: X.inr(2 * tk * (1 + g)),
@@ -110,6 +114,29 @@
         (d.why ? '<div class="why">' + tokens(pick(d, 'why')) + '</div>' : '') + '</div>';
     }).join('');
     $('openList').innerHTML = C.openItems.map(function (o) { return '<tr><td><b>' + esc(o.k) + '</b></td><td>' + esc(o.v) + '</td></tr>'; }).join('');
+    $('healthList').innerHTML = C.health.weights.map(function (w) {
+      return '<tr><td>' + L(esc(w.k_hi), esc(w.k)) + '</td><td class="num">' + w.w + '</td><td>' + (w.lead ? L('Leading (pehle girta hai)', 'Leading (drops first)') : L('Lagging', 'Lagging')) + '</td></tr>';
+    }).join('');
+    document.querySelectorAll('[data-tpl-group]').forEach(function (box) {
+      box.innerHTML = (K.templates || []).filter(function (t) { return t.group === box.dataset.tplGroup; }).map(function (t) {
+        return '<div class="tpl"><div class="tpl-hd"><h4>' + L(esc(t.title), esc(t.title_en)) + '</h4><span class="pill">' + esc(t.ch) + '</span></div>' +
+          '<pre class="tpl-body hi">' + esc(tokens(t.t)) + '</pre><pre class="tpl-body en">' + esc(tokens(t.t_en)) + '</pre>' +
+          '<div class="tpl-ft"><span>' + esc(tokens(t.when || '')) + '</span><button class="btn sm" type="button" data-copytpl>' + L('Copy karo', 'Copy') + '</button></div></div>';
+      }).join('');
+    });
+  }
+
+  /* ---------- copy ---------- */
+  function copyText(text, btn) {
+    function done() { btn.classList.add('done'); setTimeout(function () { btn.classList.remove('done'); }, 1400); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta); done();
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(done, fallback); else fallback();
   }
 
   /* ---------- global search ---------- */
@@ -221,6 +248,8 @@
       var b = e.target.closest('[data-setlang]'); if (b) { setLang(b.dataset.setlang); return; }
       var c = e.target.closest('#faqCats [data-cat]'); if (c) { faqCat = c.dataset.cat; renderFaq(); return; }
       var r = e.target.closest('#results [data-i]'); if (r) { go(hits[+r.dataset.i]); return; }
+      var cp = e.target.closest('[data-copytpl]');
+      if (cp) { copyText(cp.closest('.tpl').querySelector('.tpl-body.' + lang()).textContent, cp); return; }
       if (!e.target.closest('.search')) $('results').hidden = true;
     });
     $('meetingBtn').addEventListener('click', function () { setMeeting(root.dataset.meeting !== 'on'); });

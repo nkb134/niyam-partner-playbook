@@ -12,6 +12,13 @@ This is research and planning, not legal or tax advice. Every compliance point h
 
 Some primary sites (ASCI, Google and Meta policy pages, binance.com) blocked automated reading, so some points rest on law-firm or news summaries. Source strength is marked throughout and summarised in the Appendix.
 
+> **Status, 2 Oct 2026:** the suggested defaults for D1–D13 (§3) were adopted as working defaults,
+> pending compliance and leadership sign-off. Phases 1 and 2 are built: playbook sections 13–14 and
+> `partner-kit.html` (shown with a DRAFT banner until compliance signs off). One change from §6:
+> instead of a shared `faq-public.js`, the kit has its own short written FAQ in `kit-content.js`.
+> The playbook FAQ answers are written as spoken lines for the team, with coaching notes, so they
+> don't suit a page partners keep and forward.
+
 ---
 
 ## 1. Summary
